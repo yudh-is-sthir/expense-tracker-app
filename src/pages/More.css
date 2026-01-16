@@ -1,0 +1,129 @@
+/* Backdrop - Transparent, no blur */
+.more-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 999;
+}
+
+/* Speed Dial - Vertical Stack */
+.more-speed-dial {
+    position: fixed;
+    bottom: 90px;
+    /* Just above bottom nav */
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+/* Speed Dial Item */
+.speed-dial-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    animation: slideInRight 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.speed-dial-item:active:not(.disabled) {
+    transform: scale(0.95);
+}
+
+.speed-dial-item.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Icon Circle */
+.speed-dial-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--item-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-fast);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.speed-dial-item:hover:not(.disabled) .speed-dial-icon {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Coming Soon Badge */
+.coming-soon-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    font-size: 0.5rem;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.5);
+}
+
+/* Label - Next to icon */
+.speed-dial-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+    padding: 8px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.speed-dial-item.disabled .speed-dial-label {
+    color: var(--text-tertiary);
+}
+
+/* Responsive - Center on small screens */
+@media (max-width: 480px) {
+    .more-speed-dial {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50%) translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(50%) translateY(0);
+        }
+    }
+}

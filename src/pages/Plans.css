@@ -1,0 +1,425 @@
+.plans-container {
+    padding: var(--spacing-lg);
+    padding-bottom: calc(80px + var(--spacing-lg));
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plans-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+    animation: fadeIn var(--transition-base);
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.plans-header h1 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+/* Section Tabs */
+.section-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--border-color);
+    overflow-x: auto;
+}
+
+.section-tab {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    margin-bottom: -2px;
+}
+
+.section-tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+.section-tab.active {
+    color: var(--primary-500);
+    border-bottom-color: var(--primary-500);
+}
+
+.section-content {
+    animation: fadeIn var(--transition-base);
+}
+
+/* Holiday Balance Card */
+.holiday-balance-card {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    color: white;
+    box-shadow: var(--shadow-lg);
+    animation: fadeIn var(--transition-base);
+}
+
+.holiday-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.holiday-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.holiday-header .btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xs);
+}
+
+.holiday-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.holiday-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.holiday-stat .stat-label {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.holiday-stat .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.holiday-stat .stat-value.used {
+    color: #fbbf24;
+}
+
+.holiday-stat .stat-value.planned {
+    color: #a78bfa;
+}
+
+.holiday-stat .stat-value.available {
+    color: #34d399;
+}
+
+.holiday-progress {
+    margin-top: var(--spacing-md);
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    display: flex;
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width var(--transition-base);
+}
+
+.progress-fill.used {
+    background: #fbbf24;
+}
+
+.progress-fill.planned {
+    background: #a78bfa;
+}
+
+/* Filters */
+.plan-filters {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color-hover);
+}
+
+.filter-btn.active {
+    background: var(--primary-500);
+    color: white;
+    border-color: var(--primary-500);
+}
+
+/* Plan Form */
+.plan-form-card {
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn var(--transition-base);
+}
+
+.plan-form-card h3 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.plan-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.type-btn:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
+}
+
+.type-btn.active {
+    border-color: var(--type-color);
+    background: var(--bg-tertiary);
+    box-shadow: 0 0 0 4px rgba(var(--type-color), 0.1);
+}
+
+/* Plans List */
+.plans-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.plan-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.plan-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    animation: fadeIn var(--transition-slow);
+}
+
+.plan-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.plan-card.completed {
+    opacity: 0.8;
+}
+
+.plan-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.plan-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xs);
+    gap: var(--spacing-sm);
+}
+
+.plan-header h4 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.plan-destination {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.plan-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-shrink: 0;
+}
+
+.plan-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
+}
+
+.plan-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.budget-progress {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.budget-progress .progress-bar {
+    height: 6px;
+    background: var(--bg-tertiary);
+    margin-bottom: 4px;
+}
+
+.progress-text {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.plan-status {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.planning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+}
+
+.status-badge.confirmed {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+}
+
+.status-badge.ongoing {
+    background: rgba(139, 92, 246, 0.1);
+    color: #7c3aed;
+}
+
+.status-badge.completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+    text-align: center;
+    color: var(--text-tertiary);
+}
+
+.empty-state svg {
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.empty-state p {
+    margin-bottom: var(--spacing-xs);
+}

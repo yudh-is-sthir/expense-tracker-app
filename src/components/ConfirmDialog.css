@@ -1,0 +1,106 @@
+.confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    animation: fadeIn var(--transition-base);
+    padding: var(--spacing-md);
+}
+
+.confirm-dialog {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-xl);
+    max-width: 400px;
+    width: 100%;
+    box-shadow: var(--shadow-xl);
+    animation: scaleIn var(--transition-slow);
+    position: relative;
+    text-align: center;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.confirm-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: transparent;
+    border: none;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-close:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.confirm-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.confirm-icon.danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger-500);
+}
+
+.confirm-icon.warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning-500);
+}
+
+.confirm-icon.info {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--info-500);
+}
+
+.confirm-title {
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.confirm-message {
+    margin: 0 0 var(--spacing-xl) 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.confirm-actions .btn {
+    flex: 1;
+}
